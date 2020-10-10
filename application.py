@@ -22,7 +22,7 @@ Session(app)
 engine = create_engine(os.getenv("DATABASE_URL"))
 db = scoped_session(sessionmaker(bind=engine))
 
-@app.route("/login")
+@app.route("/")
 def login():
     return render_template("login.html")
 
