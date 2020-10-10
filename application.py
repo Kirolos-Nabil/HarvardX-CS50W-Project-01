@@ -1,6 +1,7 @@
 import os
 
 from flask import Flask, session, render_template, request, flash, redirect, url_for, jsonify
+from flask_session import session
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
 import requests
