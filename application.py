@@ -24,7 +24,11 @@ db = scoped_session(sessionmaker(bind=engine))
 
 @app.route("/")
 def login():
-    return render_template("login.html")
+    if 'name' in session:
+        flash('Already Signed in')
+        return redirect(url_for('home'))
+    else:
+        return render_template('login.html')
 
 @app.route("/login_validation" , methods=["POST", "GET"])
 def login_validation():
