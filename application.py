@@ -109,7 +109,7 @@ def registration_validation():
 def home():
     baseUrl = request.base_url
     list = []
-    result = db.execute(" SELECT * FROM books ;").fetchall()
+    result = db.execute(" SELECT * FROM books LIMIT 100;").fetchall()
     #if found then save it in list
     if result:
         for i in result :
