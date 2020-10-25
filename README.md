@@ -1,9 +1,9 @@
 # Project 1
 
-Course name: Web Programming with Python and JavaScript
-Hint: I made this project to accomplish project1 portion of HarvardX CS50W course
-Live link https://book-cafe.herokuapp.com/
-App name: book-cafe
+Course name: Web Programming with Python and JavaScript.
+Hint: I made this project to accomplish project1 portion of HarvardX CS50W course.
+Live link https://book-cafe.herokuapp.com/.
+App name: book-cafe.
 
 Breif description: This is a simple book review app made with flask. To use this website features you have to login first. Anyone can register in this website. After registration and logged into the website people can search for books, view reviews on particular book and can submit his own review.
 
