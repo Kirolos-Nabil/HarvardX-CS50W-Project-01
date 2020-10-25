@@ -25,7 +25,6 @@ db = scoped_session(sessionmaker(bind=engine))
 @app.route("/")
 def login():
     if 'name' in session:
-        flash('Already Signed in')
         return redirect(url_for('home'))
     else:
         return render_template('login.html')
@@ -107,20 +106,22 @@ def registration_validation():
 
 @app.route("/cafe-books")
 def home():
-    baseUrl = request.base_url
-    list = []
-    result = db.execute(" SELECT * FROM books LIMIT 100;").fetchall()
-    #if found then save it in list
-    if result:
-        for i in result :
-            list.append(i)
-        return render_template('home.html', baseUrl = baseUrl,  items = list)
+    if 'name' in session:
+        baseUrl = request.base_url
+        list = []
+        result = db.execute(" SELECT * FROM books LIMIT 100;").fetchall()
+        #if found then save it in list
+        if result:
+            for i in result :
+                list.append(i)
+            return render_template('home.html', baseUrl = baseUrl,  items = list)
 
-    #if not found show a not found message
+        #if not found show a not found message
+        else:
+            return render_template('home.html', msgNo = "Sorry! No books found" , text = "this account")
+
     else:
-        return render_template('home.html', msgNo = "Sorry! No books found" , text = "this account")
-
-
+        return render_template('login.html')
 
 @app.route("/profile")
 def profile():
