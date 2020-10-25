@@ -44,7 +44,7 @@
   width: 100%;
   margin: 10px 0;
 }
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .profile-left {
     height: auto;
     padding: 40px;
